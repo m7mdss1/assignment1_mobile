@@ -17,6 +17,9 @@ public class MainActivity3 extends AppCompatActivity {
     ListView listView;
     ArrayList<Disease> arrayList11;
     static ArrayList<String> I=new ArrayList<>();
+    static ArrayList<String> I1=new ArrayList<>();
+    static ArrayList<String> I2=new ArrayList<>();
+    static ArrayList<String> I3=new ArrayList<>();
     ArrayAdapter arrayAdapter2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,10 +60,41 @@ public class MainActivity3 extends AppCompatActivity {
                 listView.setAdapter(null);
             }
             for (int i=0;i<arrayList11.size();i++){
-                if(arrayList11.get(i).getDiseaseType().equalsIgnoreCase(spinner5.getSelectedItem().toString())){
+                if(arrayList11.get(i).getDiseaseType().equalsIgnoreCase(spinner5.getSelectedItem().toString())&&arrayList11.get(i).getDiseaseType().equalsIgnoreCase("infectious diseases")){
+
 
                     I.add(arrayList11.get(i).getDiseaseName());
                     arrayAdapter2=new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,I);
+                    arrayAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    listView=findViewById(R.id.listView);
+
+                    listView.setAdapter(arrayAdapter2);
+                }
+                else if(arrayList11.get(i).getDiseaseType().equalsIgnoreCase(spinner5.getSelectedItem().toString())&&arrayList11.get(i).getDiseaseType().equalsIgnoreCase("deficiency diseases")){
+
+
+                    I1.add(arrayList11.get(i).getDiseaseName());
+                    arrayAdapter2=new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,I1);
+                    arrayAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    listView=findViewById(R.id.listView);
+
+                    listView.setAdapter(arrayAdapter2);
+                }
+                else if(arrayList11.get(i).getDiseaseType().equalsIgnoreCase(spinner5.getSelectedItem().toString())&&arrayList11.get(i).getDiseaseType().equalsIgnoreCase("hereditary diseases")){
+
+
+                    I2.add(arrayList11.get(i).getDiseaseName());
+                    arrayAdapter2=new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,I2);
+                    arrayAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    listView=findViewById(R.id.listView);
+
+                    listView.setAdapter(arrayAdapter2);
+                }
+                else if(arrayList11.get(i).getDiseaseType().equalsIgnoreCase(spinner5.getSelectedItem().toString())&&arrayList11.get(i).getDiseaseType().equalsIgnoreCase("physiological diseases")){
+
+
+                    I3.add(arrayList11.get(i).getDiseaseName());
+                    arrayAdapter2=new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,I3);
                     arrayAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     listView=findViewById(R.id.listView);
 
@@ -70,8 +104,47 @@ public class MainActivity3 extends AppCompatActivity {
             flag=1;
         }
         else{
-            return;
-        }
+            for (int i=0;i<arrayList11.size();i++){
+            if(arrayList11.get(i).getDiseaseType().equalsIgnoreCase(spinner5.getSelectedItem().toString())&&arrayList11.get(i).getDiseaseType().equalsIgnoreCase("infectious diseases")){
+
+
+                arrayAdapter2=new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,I);
+                arrayAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                listView=findViewById(R.id.listView);
+
+                listView.setAdapter(arrayAdapter2);
+            }
+            else if(arrayList11.get(i).getDiseaseType().equalsIgnoreCase(spinner5.getSelectedItem().toString())&&arrayList11.get(i).getDiseaseType().equalsIgnoreCase("deficiency diseases")){
+
+
+                arrayAdapter2=new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,I1);
+                arrayAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                listView=findViewById(R.id.listView);
+
+                listView.setAdapter(arrayAdapter2);
+            }
+            else if(arrayList11.get(i).getDiseaseType().equalsIgnoreCase(spinner5.getSelectedItem().toString())&&arrayList11.get(i).getDiseaseType().equalsIgnoreCase("hereditary diseases")){
+
+
+                arrayAdapter2=new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,I2);
+                arrayAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                listView=findViewById(R.id.listView);
+
+                listView.setAdapter(arrayAdapter2);
+            }
+            else if(arrayList11.get(i).getDiseaseType().equalsIgnoreCase(spinner5.getSelectedItem().toString())&&arrayList11.get(i).getDiseaseType().equalsIgnoreCase("physiological diseases")){
+
+
+                arrayAdapter2=new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,I3);
+                arrayAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                listView=findViewById(R.id.listView);
+
+                listView.setAdapter(arrayAdapter2);
+            }
+            else{
+                listView.setAdapter(null);
+            }
+        }}
 
     }
 }
