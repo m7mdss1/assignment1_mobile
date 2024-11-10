@@ -19,9 +19,9 @@ import java.util.List;
 public class MainActivity2 extends AppCompatActivity {
     EditText editText;
     Button button;
-    List<String> arrayList;
+    ArrayList<String> arrayList;
 
-    ArrayAdapter<String> arrayAdapter;
+    public ArrayAdapter<String> arrayAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +50,7 @@ public class MainActivity2 extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
                     intent.putExtra("Disease Name", editText.getText().toString());
                     intent.putExtra("Disease Type", spinner.getSelectedItem().toString());
+                    intent.putExtra("array",arrayList);
                     startActivity(intent);
 
                 }
